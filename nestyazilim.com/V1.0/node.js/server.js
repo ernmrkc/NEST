@@ -1,5 +1,5 @@
-const HOST = 'www.nestyazilim.com';                                                        // Server ip address
-const PORT = process.env.PORT || 8080;                                              // The port the server is running on
+const HOST = '------------';                                                        // Server ip address
+const PORT = process.env.PORT || 1111;                                              // The port the server is running on
 
 const express = require('express');                                                 // It's used for building web applications and APIs.
 const https = require('https');                                                     // Secure connection
@@ -12,8 +12,8 @@ const upload = multer({ dest: 'uploads/' });                                    
 
 
 const options = {
-  key: fs.readFileSync('/etc/letsencrypt/live/nestyazilim.com/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/nestyazilim.com/fullchain.pem')
+  key: fs.readFileSync('privkey.pem'),
+  cert: fs.readFileSync('fullchain.pem')
 };
 
 app.use(cors());                                                                    // Use CORS 
@@ -22,12 +22,12 @@ app.use(express.json());                                                        
 
 let transporter = nodemailer.createTransport({
 
-  service: 'gmail',                                                                 // Using the 'gmail' service. This allows Nodemailer to directly interact with Gmail's SMTP server.
+  service: 'mailservice --> e.g. gmail',                   // Using the 'gmail' service. This allows Nodemailer to directly interact with Gmail's SMTP server.
 
   // Authentication information for the user.
   auth: {
-    user: 'nestsoftwareservice@gmail.com',                                          // E-mail address of the Gmail account.
-    pass: 'jyqn xvdt sejh vdza'                                                     // The password for the Gmail account.
+    user: 'dummy_mail_address@....',                                          // E-mail address of the Gmail account.
+    pass: 'password'                                                          // The password for the Gmail account.
   }
 });
 
@@ -76,8 +76,8 @@ app.post('/careerApplication', upload.fields([{ name: 'user_cv', maxCount: 1 }, 
   const { user_name, user_phone, user_email, application_department } = req.body;   // Extract user submitted data from the request body. This includes name, phone number, email, and the department for application.
 
   let mailOptions = {                                                               // Configure the email options for sending an application confirmation.
-    from: 'nestsoftwareservice@gmail.com',                                          // Sender's email address
-    to: 'nest@nestyazilim.com',                                                     // Recipient's email address
+    from: 'sendermailaddress@blabla.com',                                           // Sender's email address
+    to: 'recipientsmailaddress@blabla.com',                                         // Recipient's email address
     subject: `Application for ${application_department}`,                           // E-mail subject
     text: `Name: ${user_name}\nMail: ${user_email}\nPhone: ${user_phone}\nPosition: ${application_department}`,
   
@@ -108,8 +108,8 @@ app.post('/businessInquiry', upload.none(), (req, res) => {
   const { name_surname, phone_no, mail, company, subject, explanation } = req.body; // Extract data from the request body. This data includes name, phone number, email, company name, subject, and explanation of the inquiry.
 
   let mailOptions = {                                                               // Configure the email options for sending the business inquiry.
-    from: 'nestsoftwareservice@gmail.com',                                          // Sender's email address
-    to: 'nest@nestyazilim.com',                                                     // Recipient's email address
+    from: 'sendermailaddress@blabla.com',                                           // Sender's email address
+    to: 'recipientsmailaddress@blabla.com',                                         // Recipient's email address
     subject: subject,                                                               // E-mail subject
     text: `Name: ${name_surname}\nPhone: ${phone_no}\nMail: ${mail}\nCompany: ${company}\nExplanation: ${explanation}`
   };
@@ -136,8 +136,8 @@ app.post('/supportRequest', upload.none(), (req, res) => {
   const { mail, issue, subject, explanation } = req.body;                           // Extract data from the client's request. This includes the client's email, issue, subject, and a detailed explanation.
 
   let mailOptions = {                                                               // Configure the email options for sending out the support request.
-    from: 'nestsoftwareservice@gmail.com',                                          // Sender's email address
-    to: 'nest@nestyazilim.com',                                                     // Recipient's email address (support team's address)
+    from: 'sendermailaddress@blabla.com',                                           // Sender's email address
+    to: 'recipientsmailaddress@blabla.com',                                         // Recipient's email address
     subject: subject,                                                               // Email subject
     text: `Mail: ${mail}\nIssue: ${issue}\nExplanation: ${explanation}`            
   };
