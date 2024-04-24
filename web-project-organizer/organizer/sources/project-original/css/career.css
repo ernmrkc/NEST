@@ -1,0 +1,100 @@
+#submitButton{
+    margin-top: 30px;
+}
+
+.select-box {
+    position: relative;
+}
+
+.select-box select:focus {
+    border-bottom: 1px solid var(--effect-color);
+}
+
+.select-box label {
+    left: 10px;
+}
+
+select option{
+    font-weight: 200;
+    color: black;
+}
+
+.file-upload-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-upload-row {
+    display: flex;
+}
+
+.file-upload-item {
+    flex: 1;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+
+.file-upload-item input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-upload-item label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 20px;
+    background: transparent;
+    color: white;
+    
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    font-family: "Segoe UI Light", sans-serif;
+    font-size: var(--form-font-size-button);
+    font-weight: 100;
+}
+
+.file-upload-item:hover label {
+    background-color: var(--effect-color);
+    color: black;
+}
+
+.file-upload-item a {
+    margin: 0px;
+
+    text-decoration: none;
+    font-size: var(--form-font-size-download-link);
+    letter-spacing: 2px;
+}
+
+.file-upload-item a:hover {
+    text-decoration: underline;
+}
+
+/* Mobil özel görünüm */
+@media (max-width: 600px){
+    .scrollablePanel{
+        min-height: 570px;
+    }
+
+    .file-upload-item label {
+        background-color: var(--effect-color);
+        color: black;
+    }
+}

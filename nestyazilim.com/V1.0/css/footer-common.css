@@ -1,0 +1,91 @@
+#backgroundLogo {
+    background-image: url("/images/corp-logo/nest-cyan.webp");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    animation: opacity 0.25s ease;
+    z-index: -1;
+}
+
+.transparent_background {
+    left: 1%;
+    max-width: 94%;
+}
+
+.scrollablePanel {
+    max-height: 75vh;
+    margin-top: 0px;
+}
+
+#PrivacyPolicyTitle {
+    margin-left: 4%;
+}
+
+#PrivacyPolicyTitle h1 {
+    margin: 2vh 5px;
+    font-size: 6rem;
+}
+
+h1{
+    font-size: 4.5rem;
+}
+h2{
+    font-size: 3.5rem;
+}
+
+@media (max-width: 1366px){
+    .transparent_background {
+        max-width: 93%;
+    }
+
+    .fa-xmark {
+        font-size: 8rem;
+    }
+}
+
+@media (max-width: 950px){
+    .transparent_background {
+        max-width: 92%;
+    }
+}
+
+@media (max-width: 780px){
+    .transparent_background {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        height: 100%;
+        top: 0;
+    }
+
+    #closeButton {
+        display: none;
+    }
+
+    .transparent_background {
+        left: 2.5%;
+        max-width: 95%;
+    }
+}
+
+@media (max-height: 780px){
+    html,
+    body {
+        overflow-y: auto;
+    }
+
+    footer {
+        position: absolute;
+    }
+    
+    #information {
+        position: absolute;
+    }
+}

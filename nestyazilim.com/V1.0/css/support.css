@@ -1,0 +1,51 @@
+#submitButton {
+    margin-top: 20px;
+}
+
+.transparent_background {
+    width: 70%;
+    left: 50%;
+    top: 120px;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.scrollablePanel {
+    max-height: 70vh;
+    min-height: 550px;
+}
+
+.text-box textarea {
+    height: 25vh;
+}
+
+.select-box {
+    position: relative;
+}
+
+.select-box select:focus {
+    border-bottom: 1px solid var(--effect-color);
+}
+
+.select-box label {
+    left: 10px;
+}
+
+select option {
+    font-weight: 200;
+    color: black;
+}
+
+.loading-spinner {
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    .transparent_background {
+        transform: initial;
+        width: 90%;
+        left: 5%;
+        top: 50px;
+    }
+}
