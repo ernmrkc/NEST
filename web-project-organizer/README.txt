@@ -1,5 +1,3 @@
-HTML-CSS-JS dosyalarını minimize eder ve karmaşık hale getirir.
-
-organizer/sources/project-original klasörü içine proje dosyalarının atılması gerekli.
-
-proje çıktıları organizer/output/project-organized klasörü içine çıkarılır.
+-It minimizes and obfuscates HTML-CSS-JS files.
+-Project files should be placed in the organizer/sources/project-original folder.
+-Project outputs are placed in the organizer/output/project-organized folder.
